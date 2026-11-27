@@ -1,0 +1,23 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build firmware (Keil)",
+            "type": "process",
+            "command": "powershell.exe",
+            "args": [
+                "-NoProfile",
+                "-Command",
+                "$ErrorActionPreference = 'Stop'; $log = 'vscode_build.log'; if (Test-Path -LiteralPath $log) { Remove-Item -LiteralPath $log }; $build = Start-Process -FilePath 'D:/keilc/arm/UV4/UV4.exe' -ArgumentList @('-b', 'Firmware.uvprojx', '-o', $log) -WorkingDirectory (Get-Location).Path -Wait -PassThru; if (-not (Test-Path -LiteralPath $log)) { Write-Error 'Keil did not create a build log'; exit 1 }; Get-Content -LiteralPath $log; if ($build.ExitCode -ne 0 -or -not (Select-String -LiteralPath $log -Pattern ' - 0 Error\\(s\\),' -Quiet)) { exit 1 }"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/Firmware/MDK-ARM"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}
