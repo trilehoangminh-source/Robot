@@ -133,10 +133,29 @@ Source: [`pid.c`](Firmware/Algorithm/pid.c), [`joint_controller.c`](Firmware/Con
 
 Bộ lọc tuyến tính sử dụng mô hình vận tốc không đổi, chỉ lấy góc encoder làm phép đo; không sử dụng vận tốc sai phân cùng encoder như một phép đo độc lập.
 
-$$x_k=\begin{bmatrix}q_k\\\omega_k\end{bmatrix},\quad A=\begin{bmatrix}1&T_s\\0&1\end{bmatrix},\quad H=\begin{bmatrix}1&0\end{bmatrix}$$
+$$
+x_k =
+\begin{bmatrix}
+q_k \\
+\omega_k
+\end{bmatrix},
+\quad
+A =
+\begin{bmatrix}
+1 & T_s \\
+0 & 1
+\end{bmatrix},
+\quad
+H = \begin{bmatrix}1 & 0\end{bmatrix}
+$$
 
-$$Q=S_a\begin{bmatrix}T_s^3/3&T_s^2/2\\T_s^2/2&T_s\end{bmatrix}$$
-
+$$
+Q = S_a
+\begin{bmatrix}
+\frac{T_s^3}{3} & \frac{T_s^2}{2} \\
+\frac{T_s^2}{2} & T_s
+\end{bmatrix}
+$$
 ```mermaid
 flowchart LR
     P["Previous state and covariance"] --> A["Predict<br/>q, omega, P"]
