@@ -29,7 +29,6 @@
 /Readme/Context/CONTEXT_*.md
 
 # VS Code local state; keep shared tasks.json and c_cpp_properties.json
-.vscode/settings.json
 .vscode/launch.json
 .vscode/ipch/
 .vscode/.browse.VC.db*

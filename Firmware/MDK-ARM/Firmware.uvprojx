@@ -10,6 +10,7 @@
       <TargetName>Firmware</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
+      <pCCUsed>6240000::V6.24::ARMCLANG</pCCUsed>
       <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -339,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../Config;../Platform;../BSP;../Device;../Algorithm;../Controller;../Communication;../Application;../Tasks</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -357,7 +358,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../Config;../Platform;../BSP;../Device;../Algorithm;../Controller;../Communication;../Application;../Tasks</IncludePath>
             </VariousControls>
           </Aads>
           <LDads>
@@ -567,6 +568,226 @@
               <FileName>port.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Platform/STM32</GroupName>
+          <Files>
+            <File>
+              <FileName>platform_stm32.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Platform/STM32/platform_stm32.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>BSP</GroupName>
+          <Files>
+            <File>
+              <FileName>bsp_pwm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../BSP/bsp_pwm.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_encoder.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../BSP/bsp_encoder.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../BSP/bsp_gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../BSP/bsp_uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../BSP/bsp_timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_timebase.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../BSP/bsp_timebase.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Device</GroupName>
+          <Files>
+            <File>
+              <FileName>mdd3a.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Device/mdd3a.c</FilePath>
+            </File>
+            <File>
+              <FileName>motor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Device/motor.c</FilePath>
+            </File>
+            <File>
+              <FileName>encoder.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Device/encoder.c</FilePath>
+            </File>
+            <File>
+              <FileName>sg90.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Device/sg90.c</FilePath>
+            </File>
+            <File>
+              <FileName>limit_switch.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Device/limit_switch.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Algorithm</GroupName>
+          <Files>
+            <File>
+              <FileName>pid.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Algorithm/pid.c</FilePath>
+            </File>
+            <File>
+              <FileName>kalman.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Algorithm/kalman.c</FilePath>
+            </File>
+            <File>
+              <FileName>interpolation.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Algorithm/interpolation.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Controller</GroupName>
+          <Files>
+            <File>
+              <FileName>joint_controller.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Controller/joint_controller.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Communication</GroupName>
+          <Files>
+            <File>
+              <FileName>protocol.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Communication/protocol.c</FilePath>
+            </File>
+            <File>
+              <FileName>crc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Communication/crc.c</FilePath>
+            </File>
+            <File>
+              <FileName>frame.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Communication/frame.c</FilePath>
+            </File>
+            <File>
+              <FileName>parser.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Communication/parser.c</FilePath>
+            </File>
+            <File>
+              <FileName>command.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Communication/command.c</FilePath>
+            </File>
+            <File>
+              <FileName>telemetry.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Communication/telemetry.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/Logic</GroupName>
+          <Files>
+            <File>
+              <FileName>state_machine.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Application/state_machine.c</FilePath>
+            </File>
+            <File>
+              <FileName>safety.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Application/safety.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/HomingGripper</GroupName>
+          <Files>
+            <File>
+              <FileName>homing.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Application/homing.c</FilePath>
+            </File>
+            <File>
+              <FileName>gripper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Application/gripper.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/Robot</GroupName>
+          <Files>
+            <File>
+              <FileName>robot.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Application/robot.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Controller/Trajectory</GroupName>
+          <Files>
+            <File>
+              <FileName>trajectory_controller.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Controller/trajectory_controller.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Tasks</GroupName>
+          <Files>
+            <File>
+              <FileName>control_task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Tasks/control_task.c</FilePath>
+            </File>
+            <File>
+              <FileName>telemetry_task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Tasks/telemetry_task.c</FilePath>
+            </File>
+            <File>
+              <FileName>robot_task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Tasks/robot_task.c</FilePath>
+            </File>
+            <File>
+              <FileName>communication_task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Tasks/communication_task.c</FilePath>
+            </File>
+            <File>
+              <FileName>shared_data.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Tasks/shared_data.c</FilePath>
             </File>
           </Files>
         </Group>

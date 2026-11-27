@@ -1,0 +1,17 @@
+{
+    "C_Cpp.exclusionPolicy": "checkFilesAndFolders",
+    "C_Cpp.files.exclude": {
+        "**/.vscode": true,
+        "**/.vs": true,
+        "**/Firmware/Drivers/CMSIS/Core/**": true,
+        "**/Firmware/Drivers/CMSIS/Core_A/**": true,
+        "**/Firmware/Drivers/CMSIS/DAP/**": true,
+        "**/Firmware/Drivers/CMSIS/DSP/**": true,
+        "**/Firmware/Drivers/CMSIS/NN/**": true,
+        "**/Firmware/Drivers/CMSIS/Documentation/**": true,
+        "**/Firmware/Drivers/CMSIS/RTOS/**": true,
+        "**/Firmware/Drivers/CMSIS/RTOS2/**": true,
+        "**/Firmware/Drivers/CMSIS/Device/ST/STM32F4xx/Source/**": true,
+        "**/Firmware/Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/**": true
+    }
+}

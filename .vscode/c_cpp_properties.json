@@ -7,18 +7,22 @@
                 "--target=arm-arm-none-eabi",
                 "-mcpu=cortex-m4",
                 "-mfpu=fpv4-sp-d16",
-                "-mfloat-abi=hard"
+                "-mfloat-abi=hard",
+                "-funsigned-char",
+                "-fshort-enums",
+                "-fshort-wchar"
             ],
             "intelliSenseMode": "windows-clang-arm",
             "cStandard": "c99",
             "cppStandard": "c++17",
             "defines": [
                 "USE_HAL_DRIVER",
-                "STM32F407xx"
+                "STM32F407xx",
+                "_RTE_",
+                "__UVISION_VERSION=543",
+                "__EVAL"
             ],
             "includePath": [
-                "${workspaceFolder}/Firmware/MDK-ARM/RTE/_Firmware",
-                "D:/keilc/arm/pack/ARM/CMSIS/6.3.0/CMSIS/Core/Include",
                 "${workspaceFolder}/Firmware/Core/Inc",
                 "${workspaceFolder}/Firmware/Drivers/STM32F4xx_HAL_Driver/Inc",
                 "${workspaceFolder}/Firmware/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy",
@@ -26,8 +30,47 @@
                 "${workspaceFolder}/Firmware/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
                 "${workspaceFolder}/Firmware/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
                 "${workspaceFolder}/Firmware/Drivers/CMSIS/Device/ST/STM32F4xx/Include",
-                "${workspaceFolder}/Firmware/Drivers/CMSIS/Include"
-            ]
+                "${workspaceFolder}/Firmware/Drivers/CMSIS/Include",
+                "${workspaceFolder}/Firmware/Config",
+                "${workspaceFolder}/Firmware/Platform",
+                "${workspaceFolder}/Firmware/BSP",
+                "${workspaceFolder}/Firmware/Device",
+                "${workspaceFolder}/Firmware/Algorithm",
+                "${workspaceFolder}/Firmware/Controller",
+                "${workspaceFolder}/Firmware/Communication",
+                "${workspaceFolder}/Firmware/Application",
+                "${workspaceFolder}/Firmware/Tasks",
+                "${workspaceFolder}/Firmware/MDK-ARM/RTE/_Firmware",
+                "D:/keilc/arm/pack/ARM/CMSIS/6.3.0/CMSIS/Core/Include"
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "${workspaceFolder}/Firmware/Core/Inc/*",
+                    "${workspaceFolder}/Firmware/Core/Src/*",
+                    "${workspaceFolder}/Firmware/Drivers/STM32F4xx_HAL_Driver/Inc/*",
+                    "${workspaceFolder}/Firmware/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/*",
+                    "${workspaceFolder}/Firmware/Middlewares/Third_Party/FreeRTOS/Source/*",
+                    "${workspaceFolder}/Firmware/Middlewares/Third_Party/FreeRTOS/Source/include/*",
+                    "${workspaceFolder}/Firmware/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/*",
+                    "${workspaceFolder}/Firmware/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/*",
+                    "${workspaceFolder}/Firmware/Drivers/CMSIS/Device/ST/STM32F4xx/Include/*",
+                    "${workspaceFolder}/Firmware/Drivers/CMSIS/Include/*",
+                    "${workspaceFolder}/Firmware/Config/*",
+                    "${workspaceFolder}/Firmware/Platform/*",
+                    "${workspaceFolder}/Firmware/Platform/STM32/*",
+                    "${workspaceFolder}/Firmware/Platform/Simulation/*",
+                    "${workspaceFolder}/Firmware/BSP/*",
+                    "${workspaceFolder}/Firmware/Device/*",
+                    "${workspaceFolder}/Firmware/Algorithm/*",
+                    "${workspaceFolder}/Firmware/Controller/*",
+                    "${workspaceFolder}/Firmware/Communication/*",
+                    "${workspaceFolder}/Firmware/Application/*",
+                    "${workspaceFolder}/Firmware/Tasks/*",
+                    "${workspaceFolder}/Firmware/MDK-ARM/RTE/_Firmware/*",
+                    "D:/keilc/arm/pack/ARM/CMSIS/6.3.0/CMSIS/Core/Include/*"
+                ]
+            }
         }
     ],
     "version": 4

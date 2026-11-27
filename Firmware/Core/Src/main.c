@@ -22,6 +22,12 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "control_task.h"
+#include "communication_task.h"
+#include "robot_task.h"
+#include "telemetry_task.h"
+#include "shared_data.h"
+#include "bsp_timer.h"
 
 /* USER CODE END Includes */
 
@@ -169,6 +175,7 @@ int main(void)
   /* USER CODE END RTOS_TIMERS */
 
   /* USER CODE BEGIN RTOS_QUEUES */
+  shared_data_initialize();
   /* add queues, ... */
   /* USER CODE END RTOS_QUEUES */
 
@@ -738,11 +745,7 @@ static void MX_GPIO_Init(void)
 void StartControlTask(void *argument)
 {
   /* USER CODE BEGIN 5 */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
+  control_task_run(argument);
   /* USER CODE END 5 */
 }
 
@@ -756,11 +759,7 @@ void StartControlTask(void *argument)
 void StartCommTask(void *argument)
 {
   /* USER CODE BEGIN StartCommTask */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
+  communication_task_run(argument);
   /* USER CODE END StartCommTask */
 }
 
@@ -774,11 +773,7 @@ void StartCommTask(void *argument)
 void StartRobotTask(void *argument)
 {
   /* USER CODE BEGIN StartRobotTask */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
+  robot_task_run(argument);
   /* USER CODE END StartRobotTask */
 }
 
@@ -792,11 +787,7 @@ void StartRobotTask(void *argument)
 void StartTelemetryTask(void *argument)
 {
   /* USER CODE BEGIN StartTelemetryTask */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
+  telemetry_task_run(argument);
   /* USER CODE END StartTelemetryTask */
 }
 
@@ -818,6 +809,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     HAL_IncTick();
   }
   /* USER CODE BEGIN Callback 1 */
+  bsp_timer_on_period_elapsed(htim);
 
   /* USER CODE END Callback 1 */
 }
