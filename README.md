@@ -128,7 +128,7 @@ I_k=I_{k-1}+K_iT_s e_k
 ```
 
 ```math
-u_k=\operatorname{sat}(K_pe_k+I_k-K_d\hat\omega_k)
+u_k=\mathrm{sat}(K_pe_k+I_k-K_d\hat\omega_k)
 ```
 
 Tích phân được giới hạn và chỉ cập nhật khi không làm bão hòa theo chiều bất lợi (conditional integration anti-windup). Output chuẩn hóa theo khoảng $[-1,1]$; dấu xác định chiều điều khiển và độ lớn biểu diễn duty yêu cầu. Duty thực tế có thể khác requested output khi driver bận hoặc safety can thiệp. Giá trị gain và dấu motor thật chưa được xác nhận.
